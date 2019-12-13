@@ -1,14 +1,14 @@
 from validators.same_suit import same_suit
 
 
-def is_royal_flush(hand):
+def royal_flush(hand):
 
-    royal_flush = ('T', 'J', 'Q', 'K', 'A')
+    royal_flush_sequence = ('T', 'J', 'Q', 'K', 'A')
 
     # If any card is not a Ten, Jack, Queen, King, or Ace then return False
     for card in hand:
 
-        if card[0] not in royal_flush:
+        if card[0] not in royal_flush_sequence:
 
             return False
 

@@ -1,7 +1,7 @@
 from validators.multiples import multiples
 
 
-def is_full_house(hand):
+def full_house(hand):
 
     similarities = multiples(hand)
 

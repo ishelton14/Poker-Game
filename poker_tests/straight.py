@@ -2,7 +2,7 @@ from ordering.sort_hand import sort_hand
 from ordering.get_card_order import get_card_order
 
 
-def is_straight(hand):
+def straight(hand):
 
     hand = sort_hand(hand)
     hand = ''.join([str(card[0]) for card in hand])

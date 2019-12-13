@@ -1,7 +1,7 @@
 from validators.multiples import multiples
 
 
-def is_three_kind(hand):
+def three_kind(hand):
 
     similarities = multiples(hand)
 

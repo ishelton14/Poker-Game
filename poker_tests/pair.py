@@ -1,7 +1,7 @@
 from validators.multiples import multiples
 
 
-def is_pair(hand, pair_number):
+def pair(hand, pair_number):
 
     similarities = multiples(hand)
 
