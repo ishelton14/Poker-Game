@@ -21,6 +21,6 @@ def evaluate_hand(hand):
             return count
 
         # If hand requires a tie breaker, return both count and tie breaker value
-        if type(func(hand)) is tuple:
+        elif type(func(hand)) is tuple:
 
             return count, func(hand)[1]
