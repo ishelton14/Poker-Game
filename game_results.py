@@ -23,7 +23,7 @@ for row in rows:
     player_a_score = evaluate_hand(player_a_hand)
     player_b_score = evaluate_hand(player_b_hand)
 
-    # If neither player gets at least a pair, get highest card
+    # If neither player gets at least one pair, get highest card
     if player_a_score is None and player_b_score is None:
         winner = highest_card(player_a_hand, player_b_hand)
 
