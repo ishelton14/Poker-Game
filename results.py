@@ -7,6 +7,8 @@ with open('poker.txt', 'r') as fh:
 
 rows = results.splitlines()
 
+winners = []
+
 for row in rows:
 
     hand = row.split(' ')
@@ -32,12 +34,17 @@ for row in rows:
         if player_a_score < player_b_score:
             winner = 0
 
-        elif player_b_score > player_a_score:
+        elif player_b_score < player_a_score:
             winner = 1
 
         else:
             winner = highest_card(player_a_hand, player_b_hand)
 
-    print(winner)
+    winners.append(winner)
+
     break
+
+answer = len([winner for winner in winners if winner == 0])
+
+print(answer)
 

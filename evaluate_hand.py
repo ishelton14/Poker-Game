@@ -1,9 +1,9 @@
 from poker_tests.royal_flush import royal_flush
 from poker_tests.straight_flush import straight_flush
-from poker_tests.straight import straight
 from poker_tests.four_kind import four_kind
 from poker_tests.full_house import full_house
 from validators.same_suit import same_suit
+from poker_tests.straight import straight
 from poker_tests.three_kind import three_kind
 from poker_tests.two_pair import two_pair
 from poker_tests.one_pair import one_pair
@@ -11,14 +11,18 @@ from poker_tests.one_pair import one_pair
 
 def evaluate_hand(hand):
 
-    evaluate_functions = [royal_flush, straight_flush, straight, four_kind, full_house,
-                          same_suit, three_kind, two_pair, one_pair]
+    evaluate_functions = [royal_flush, straight_flush, four_kind, full_house,
+                          same_suit, straight, three_kind, two_pair, one_pair]
 
     for count, func in enumerate(evaluate_functions):
 
         if func(hand) is True:
 
             return count
+
+        if type(func(hand)) is tuple:
+
+            return count, func(hand)[1]
 
     # royal_flush(hand)
     #
@@ -65,7 +69,7 @@ def evaluate_hand(hand):
 # a = ['2S', '2C', '4D', '5S', '2H']
 
 # Two pair
-# a = ['2S', '2C', '5D', '3S', '3H']
+a = ['2S', '2C', '5D', '6S', '6H']
 
 # One pair
 # a = ['2S', '2C', '5D', '4S', '7H']
@@ -73,6 +77,6 @@ def evaluate_hand(hand):
 # High Card
 # a = ['2S', '2C', '5D', '4S', 'KH']
 
-# result = evaluate_hand(a)
-#
-# print(result)
+result = evaluate_hand(a)
+
+print(result)
