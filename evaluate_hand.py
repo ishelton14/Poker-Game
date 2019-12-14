@@ -77,6 +77,6 @@ a = ['2S', '2C', '5D', '6S', '6H']
 # High Card
 # a = ['2S', '2C', '5D', '4S', 'KH']
 
-result = evaluate_hand(a)
-
-print(result)
+# result = evaluate_hand(a)
+#
+# print(result)
