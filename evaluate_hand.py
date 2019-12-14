@@ -20,63 +20,7 @@ def evaluate_hand(hand):
 
             return count
 
+        # If hand requires a tie breaker, return both count and tie breaker value
         if type(func(hand)) is tuple:
 
             return count, func(hand)[1]
-
-    # royal_flush(hand)
-    #
-    # straight_flush(hand)
-    #
-    # four_kind(hand)
-    #
-    # full_house(hand)
-    #
-    # # Flush
-    # same_suit(hand)
-    #
-    # straight(hand)
-    #
-    # three_kind(hand)
-    #
-    # # Two pair
-    # pair(hand, pair_number=2)
-    #
-    # # One pair
-    # pair(hand, pair_number=1)
-    #
-    # high_card(hand)
-
-
-# Royal Flush
-# a = ['TS', 'JS', 'QS', 'KS', 'AS']
-
-# Straight Flush
-# a = ['9S', 'TS', 'JS', 'QS', 'KS']
-
-# a = ['2S', '4S', '3S', '5S', '6S']
-
-# Four of a kind
-# a = ['2S', '2C', '2D', '5S', '2H']
-
-# Full house
-# a = ['2S', '2C', '2D', '5S', '5H']
-
-# Flush
-# a = ['1C', '3C', '5C', '6C', '9C']
-
-# Three of a kind
-# a = ['2S', '2C', '4D', '5S', '2H']
-
-# Two pair
-a = ['2S', '2C', '5D', '6S', '6H']
-
-# One pair
-# a = ['2S', '2C', '5D', '4S', '7H']
-
-# High Card
-# a = ['2S', '2C', '5D', '4S', 'KH']
-
-# result = evaluate_hand(a)
-#
-# print(result)

@@ -13,6 +13,7 @@ def pair(hand, pair_number):
         highest_rank = '2'
         card_order = get_card_order()
 
+        # Get highest ranked pair
         for similarity in similarities:
             if similarity.get('similarities') == 2:
                 if get_score(card_order, similarity.get('card')) > get_score(card_order, highest_rank):

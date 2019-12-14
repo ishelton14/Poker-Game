@@ -9,7 +9,7 @@ def four_kind(hand):
 
         if similarity.get('similarities') == 4:
 
-            # Return value of rank in addition to boolean value
+            # Return value of rank in addition to boolean value to represent tie breaker
             return True, similarity.get('card')
 
     return False

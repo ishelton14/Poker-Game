@@ -1,6 +1,5 @@
 from evaluate_hand import evaluate_hand
 from ordering.get_card_order import get_card_order
-from validators.highest_card import get_score
 from validators.highest_card import highest_card
 from validators.get_tie_breaker import get_tie_breaker
 
@@ -38,7 +37,6 @@ for row in rows:
 
     else:
 
-        # If both players have at least a pair, return the lowest number
         if player_a_score < player_b_score:
             winner = 0
 
@@ -47,19 +45,21 @@ for row in rows:
 
         else:
 
-            if player_a_tie_breaker and player_b_tie_breaker:
+            if player_a_tie_breaker is not None and player_b_tie_breaker is not None:
+
                 if player_a_tie_breaker > player_b_tie_breaker:
                     winner = 0
                 elif player_b_tie_breaker > player_a_tie_breaker:
                     winner = 1
+                else:
+                    winner = highest_card(player_a_hand, player_b_hand)
+
             else:
                 winner = highest_card(player_a_hand, player_b_hand)
 
     winners.append(winner)
 
-    # break
-
 answer = len([winner for winner in winners if winner == 0])
 
-print(answer)
+print('Player 1 won {} games.'.format(answer))
 
