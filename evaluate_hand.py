@@ -5,34 +5,43 @@ from poker_tests.four_kind import four_kind
 from poker_tests.full_house import full_house
 from validators.same_suit import same_suit
 from poker_tests.three_kind import three_kind
-from poker_tests.pair import pair
-from validators.high_card import high_card
+from poker_tests.two_pair import two_pair
+from poker_tests.one_pair import one_pair
 
 
 def evaluate_hand(hand):
 
-    royal_flush(hand)
+    evaluate_functions = [royal_flush, straight_flush, straight, four_kind, full_house,
+                          same_suit, three_kind, two_pair, one_pair]
 
-    straight_flush(hand)
+    for count, func in enumerate(evaluate_functions):
 
-    four_kind(hand)
+        if func(hand) is True:
 
-    full_house(hand)
+            return count
 
-    # Flush
-    same_suit(hand)
-
-    straight(hand)
-
-    three_kind(hand)
-
-    # Two pair
-    pair(hand, pair_number=2)
-
-    # One pair
-    pair(hand, pair_number=1)
-
-    high_card(hand)
+    # royal_flush(hand)
+    #
+    # straight_flush(hand)
+    #
+    # four_kind(hand)
+    #
+    # full_house(hand)
+    #
+    # # Flush
+    # same_suit(hand)
+    #
+    # straight(hand)
+    #
+    # three_kind(hand)
+    #
+    # # Two pair
+    # pair(hand, pair_number=2)
+    #
+    # # One pair
+    # pair(hand, pair_number=1)
+    #
+    # high_card(hand)
 
 
 # Royal Flush
@@ -62,6 +71,8 @@ def evaluate_hand(hand):
 # a = ['2S', '2C', '5D', '4S', '7H']
 
 # High Card
-a = ['2S', '2C', '5D', '4S', 'KH']
+# a = ['2S', '2C', '5D', '4S', 'KH']
 
-print(evaluate_hand(a))
+# result = evaluate_hand(a)
+#
+# print(result)
