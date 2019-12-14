@@ -1,4 +1,4 @@
-from compare_hands import compare_hands
+from evaluate_hand import evaluate_hand
 
 
 with open('poker.txt', 'r') as fh:
@@ -10,7 +10,8 @@ for row in rows:
 
     hand = row.split(' ')
 
-    compare_hands(hand[0:5], hand[5:10])
+    evaluate_hand(hand[0:5])
+    evaluate_hand(hand[5:10])
 
     break
 
