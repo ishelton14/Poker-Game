@@ -3,7 +3,6 @@ from ordering.get_card_order import get_card_order
 from validators.highest_card import highest_card
 from validators.get_tie_breaker import get_tie_breaker
 
-
 with open('poker.txt', 'r') as fh:
     results = fh.read()
 
@@ -67,4 +66,3 @@ for row in rows:
 answer = len([winner for winner in winners if winner == 0])
 
 print('Player 1 won {} games.'.format(answer))
-
